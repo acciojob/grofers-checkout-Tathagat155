@@ -11,7 +11,7 @@ const getSum = () => {
 		totalsumOfPrice+=priceRs;
 	}
 	let row=document.createElement("tr");
-	row.innerHTML=`<td>Total Price</td><td>${totalsumOfPrice}</td>`
+	row.innerHTML=`<td>Total Price  ${totalsumOfPrice}</td>`
 	const table=document.querySelector("table");
 	table.appendChild(row);
 };
