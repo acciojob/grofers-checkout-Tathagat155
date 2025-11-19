@@ -15,7 +15,7 @@ const getSum = () => {
 	}
 	let row=document.createElement("tr");
 	 row.classList.add("total-price-row"); // Important!
-	row.innerHTML=`<td>${totalsumOfPrice}</td>`
+	row.innerHTML=`<td colspan="2">${totalsumOfPrice}</td>`
 	const table=document.querySelector("table");
 	table.appendChild(row);
 };
