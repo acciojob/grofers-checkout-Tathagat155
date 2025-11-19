@@ -3,21 +3,32 @@ getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-//Add your code here
-     const prices=document.querySelectorAll(".price");
-	const oldRow = document.querySelector(".total-price-row");
+    // Select all price cells
+    const prices = document.querySelectorAll(".price");
+
+    // Remove old total row if it already exists
+    const oldRow = document.querySelector(".total-price-row");
     if (oldRow) oldRow.remove();
-	let totalsumOfPrice=0;
-	for(let price of prices){
-		let priceRs=parseInt(price.textContent)
-		if(isNaN(priceRs))continue;
-		totalsumOfPrice+=priceRs;
-	}
-	let row=document.createElement("tr");
-	 row.classList.add("total-price-row"); // Important!
-	row.innerHTML=`<td colspan="2">${totalsumOfPrice}</td>`
-	const table=document.querySelector("table");
-	table.appendChild(row);
+
+    let totalSumOfPrice = 0;
+
+    // Sum all prices
+    for (let price of prices) {
+        let priceValue = parseInt(price.textContent);
+        if (isNaN(priceValue)) continue;  // Ignore bad values
+        totalSumOfPrice += priceValue;
+    }
+
+    // Create new row for total
+    let row = document.createElement("tr");
+    row.classList.add("total-price-row");
+
+    // colspan="2" → one cell covering both columns
+    row.innerHTML = `<td colspan="2">Total: Rs ${totalSumOfPrice}</td>`;
+
+    // Append to table
+    const table = document.querySelector("table");
+    table.appendChild(row);
 };
 
 getSumBtn.addEventListener("click", getSum);
