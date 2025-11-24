@@ -20,15 +20,16 @@ const getSum = () => {
     }
 
     // Create new row for total
-    let row = document.createElement("tr");
-    row.classList.add("total-price-row");
+   // let row = document.createElement("tr");
+   // row.className="total-price-row";
 
     // colspan="2" → one cell covering both columns
-    row.innerHTML = `<td colspan="2">Total: Rs ${totalSumOfPrice}</td>`;
+    //row.innerHTML = `<tr class="total-price-row"><td colspan="2">Total: Rs ${totalSumOfPrice}</td></tr>`;
 
     // Append to table
-    const table = document.querySelector("table");
-    table.appendChild(row);
+   const table = document.querySelector("table");
+    //table.appendChild(row);
+	table.innerHTML += `<tr class="total-price-row"><td colspan="2">Total: Rs ${totalSumOfPrice}</td></tr>`;
 };
 
 getSumBtn.addEventListener("click", getSum);
