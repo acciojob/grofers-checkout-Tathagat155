@@ -1,6 +1,4 @@
-const getSumBtn = document.createElement("button");
-getSumBtn.append("Get Total Price");
-document.body.appendChild(getSumBtn);
+ let getSumBtn=document.getElementById("get-sum")
 
 const getSum = () => {
     // Select all price cells
