@@ -7,8 +7,9 @@
 	     let totalPrice=0;
 	    prices.forEach((price)=>{
      	let realPrice=parseInt(price.textContent.trim())
-	  if(isNaN(realPrice))continue;
+	  if(!isNaN(realPrice)){
 	  totalPrice+=realPrice
+	  }
   })
 	     // 🔥 agar pehle se total row hai to hata do
   let oldTotal = document.getElementById("total-row");
